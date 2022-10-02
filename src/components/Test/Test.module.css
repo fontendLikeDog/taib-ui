@@ -1,0 +1,6 @@
+
+.header {
+   @apply text-red-500 px-3 py-2
+   rounded-md uppercase;
+   background-color: blue;
+}
