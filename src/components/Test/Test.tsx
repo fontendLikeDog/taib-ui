@@ -18,7 +18,7 @@ export const Test: React.FC<ButtonProps> = ({
     const classNames = TestStyles;
     console.log(classNames);
     return (
-      <button className={classNames.header} {...props}>
+      <button className={classNames.btn} {...props}>
         {children || label}
       </button>
     );

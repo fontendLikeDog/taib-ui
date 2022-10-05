@@ -9,7 +9,7 @@ export default {
   * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
   * to learn how to generate automatic titles
   */
-  title: 'Test',
+  title: 'DEv/Test',
   component: Test,
 } as ComponentMeta<typeof Test>;
 
@@ -22,4 +22,11 @@ Primary.args = {
   primary: true,
   label: 'Button777',
 };
-Primary.storyName = 'I am the primary';
+Primary.storyName = 'Default';
+
+export const IconButton = Template.bind({});
+
+IconButton.args = {
+  primary: false,
+  label: 'icon'
+}
