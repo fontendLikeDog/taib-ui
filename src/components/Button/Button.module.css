@@ -1,0 +1,25 @@
+@tailwind base; /* Preflight will be injected here */
+
+@tailwind components;
+
+@tailwind utilities;
+
+
+@layer components {
+
+   .btn , .input, .select select, .textarea {
+      @apply items-center rounded-md shadow-none border-solid border-transparent
+      text-base inline-flex leading-normal relative;
+   }
+
+   .btn {
+      @apply bg-white border border-gray-300
+      text-gray-600 justify-center
+      text-center whitespace-nowrap py-1.7 px-4
+      h-10;
+   }
+
+   .btn:hover {
+      @apply border-gray-400 text-gray-700;
+   }
+}
