@@ -101,6 +101,7 @@ module.exports = {
         },
         text: {
           ghost: '#485fc7',
+          hover: '#f5f5f5'
         }
         
       },

@@ -22,12 +22,12 @@ Default.args = {
 };
 Default.storyName = 'Default';
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Color = Template.bind({});
+Color.args = {
   buttonText: 'Button',
   type: 'primary',
 };
-Primary.storyName = 'Primary';
+Color.storyName = 'Color';
 
 export const IconButton = Template.bind({});
 IconButton.args = {

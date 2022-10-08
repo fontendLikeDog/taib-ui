@@ -6,15 +6,21 @@ import ButtonStyles from './Button.module.css';
 
 export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     children?: React.ReactNode;
-    buttonText: string;
+    buttonText?: string;
     type?: 
       | 'primary'
       | 'link'
       | 'info'
       | 'success'
       | 'warning'
-      | 'danger';
-    btnDisabled: boolean;
+      | 'danger'
+      | 'white'
+      | 'light'
+      | 'dark'
+      | 'black'
+      | 'text'
+      | 'ghost';
+    btnDisabled?: boolean;
     style?: React.CSSProperties
     as?: keyof JSX.IntrinsicElements;
 }
