@@ -86,7 +86,27 @@ const tbui_btn_ghost = classnames(
   borderColor('border-transparent','hover:border-transparent'),
   typography('hover:underline')
 )
-
+// light color btn
+const tbui_btn_primary_light = classnames(
+  backgroundColor('bg-primary-light','hover:bg-primary-50'),
+  textColor('text-primary-700','hover:text-primary-700'),
+  borderColor('border-transparent','hover:border-transparent'),
+)
+const tbui_btn_link_light = classnames(
+  backgroundColor('bg-link-light','hover:bg-link-50'),
+  textColor('text-link-700','hover:text-link-700'),
+  borderColor('border-transparent','hover:border-transparent'),
+)
+const tbui_btn_info_light = classnames(
+  backgroundColor('bg-info-light','hover:bg-info-50'),
+  textColor('text-info','hover:text-info'),
+  borderColor('border-transparent','hover:border-transparent'),
+)
+const tbui_btn_success_light = classnames(
+  backgroundColor('bg-success-light','hover:bg-success-50'),
+  textColor('text-success','hover:text-success'),
+  borderColor('border-transparent','hover:border-transparent'),
+)
 
 
 
@@ -111,7 +131,11 @@ export const btnStyle = ({...args}:btnStyleProps) => {
     [tbui_btn_dark]: type === 'dark',
     [tbui_btn_black]: type === 'black',
     [tbui_btn_text]: type === 'text',
-    [tbui_btn_ghost]: type === 'ghost'
+    [tbui_btn_ghost]: type === 'ghost',
+    [tbui_btn_primary_light]: type === 'primary-light',
+    [tbui_btn_link_light]: type === 'link-light',
+    [tbui_btn_info_light]: type === 'info-light', 
+    [tbui_btn_success_light]: type === 'success-light', 
 
   } as unknown as TArg)
 

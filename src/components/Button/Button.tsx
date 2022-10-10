@@ -19,7 +19,13 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
       | 'dark'
       | 'black'
       | 'text'
-      | 'ghost';
+      | 'ghost'
+      | 'primary-light'
+      | 'link-light'
+      | 'info-light'
+      | 'success-light'
+      | 'warning-light'
+      | 'danger-light';
     btnDisabled?: boolean;
     style?: React.CSSProperties
     as?: keyof JSX.IntrinsicElements;

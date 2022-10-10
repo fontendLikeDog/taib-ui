@@ -12,7 +12,7 @@ module.exports = {
           light: 'hsl(171, 100%, 96%)',
           hover: '#00c4a7',
           dark: 'hsl(171, 100%, 29%)', //#00947e
-          '50': '#CEFFF8',
+          '50': '#defffa',
           '100': '#B7FFF4',
           '200': '#8AFFEE',
           '300': '#5CFFE7',
@@ -63,7 +63,8 @@ module.exports = {
           light: 'hsl(142, 52%, 96%)',
           dark: 'hsl(141, 53%, 31%)',
           hover:'#3ec487',
-          active:'#3abb81'
+          active:'#3abb81',
+          '50': '#e6f7ef'
         },
         warning : {
           DEFAULT: 'hsl(48, 100%, 67%)',
@@ -84,7 +85,8 @@ module.exports = {
           light: 'hsl(206, 70%, 96%)',
           dark: 'hsl(204, 71%, 39%)',
           hover:'#3488ce',
-          active:'#3082c5'
+          active:'#3082c5',
+          '50': '#e4eff9'
         },
         white: {
           DEFAULT: 'hsl(0, 0%, 100%)',
