@@ -1,4 +1,4 @@
-import  classnames, { cursor, opacity, TArg, typography } from 'tailwindcss-classnames';
+import  classnames, { cursor, fontSize, opacity, TArg, typography } from 'tailwindcss-classnames';
 import {backgroundColor, borderColor, textColor} from '../../../tailwindcss-classnames';
 
 import {ButtonProps} from './Button'
@@ -10,7 +10,7 @@ type myPick<T,K extends keyof T> = {
   [P in K]: T[P]
 }
 
-type btnStyleProps = myPick<ButtonProps, "type" | "btnDisabled">
+type btnStyleProps = myPick<ButtonProps, "type" | "btnDisabled" | "sizes">
 
 export const baseButton = classnames( 
   cursor('cursor-pointer')
@@ -28,7 +28,8 @@ const tbui_btn_color = classnames(
 const tbui_btn_primary = classnames(
   backgroundColor('bg-primary','hover:bg-primary-hover'),
   textColor('text-white','hover:text-white'),
-  tbui_btn_color
+  tbui_btn_color,
+  fontSize('text-2xl')
 )
 
 const tbui_btn_link = classnames(
@@ -99,13 +100,23 @@ const tbui_btn_link_light = classnames(
 )
 const tbui_btn_info_light = classnames(
   backgroundColor('bg-info-light','hover:bg-info-50'),
-  textColor('text-info','hover:text-info'),
+  textColor('text-info-dark','hover:text-info-dark'),
   borderColor('border-transparent','hover:border-transparent'),
 )
 const tbui_btn_success_light = classnames(
   backgroundColor('bg-success-light','hover:bg-success-50'),
-  textColor('text-success','hover:text-success'),
+  textColor('text-success-dark','hover:text-success-dark'),
   borderColor('border-transparent','hover:border-transparent'),
+)
+const tbui_btn_warning_light = classnames(
+  backgroundColor('bg-warning-light','hover:bg-warning-50'),
+  borderColor('border-transparent','hover:border-transparent'),
+  textColor('text-warning-dark','hover:text-warning-dark')
+)
+const tbui_btn_danger_light = classnames(
+  backgroundColor('bg-danger-light','hover:bg-danger-50'),
+  borderColor('border-transparent','hover:border-transparent'),
+  textColor('text-danger','hover:text-danger')
 )
 
 
@@ -117,7 +128,7 @@ export const disableButton = (disabled: boolean) =>
   } as unknown as TArg)
 
 export const btnStyle = ({...args}:btnStyleProps) => {
-  const {type} = args;
+  const { type, sizes } = args;
   return classnames({
     [tbui_btn_primary]: type === 'primary',
     [tbui_btn_link]: type === 'link',
@@ -136,6 +147,12 @@ export const btnStyle = ({...args}:btnStyleProps) => {
     [tbui_btn_link_light]: type === 'link-light',
     [tbui_btn_info_light]: type === 'info-light', 
     [tbui_btn_success_light]: type === 'success-light', 
+    [tbui_btn_warning_light]: type === 'warning-light',
+    [tbui_btn_danger_light]: type === 'danger-light',
+    // ['text-xs']: sizes === 'small',
+    // ['text-base']: sizes === 'normal',
+    // ['text-xl']: sizes === 'medium',
+    // ['text-2xl']: sizes === 'large',
 
   } as unknown as TArg)
 

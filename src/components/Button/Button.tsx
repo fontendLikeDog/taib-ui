@@ -27,6 +27,11 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
       | 'warning-light'
       | 'danger-light';
     btnDisabled?: boolean;
+    sizes?: 
+      | 'small'
+      | 'normal'
+      | 'medium'
+      | 'large';
     style?: React.CSSProperties
     as?: keyof JSX.IntrinsicElements;
 }
@@ -38,6 +43,7 @@ export const Button: React.FC<ButtonProps> = ({
     children,
     buttonText,
     btnDisabled = false,
+    sizes,
     as,
     type,
     style,
@@ -54,7 +60,7 @@ export const Button: React.FC<ButtonProps> = ({
     
     const RenderButton = ({children}:any) => (
       as ? (
-        <CustomButton className={classNames.btn+ ' ' + styles.btnStyle({type,btnDisabled})} {...props}>
+        <CustomButton className={classNames.btn+ ' ' + styles.btnStyle({type,btnDisabled,sizes})} {...props}>
             {children || buttonText}
         </CustomButton>
       ) : (

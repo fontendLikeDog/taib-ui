@@ -71,14 +71,16 @@ module.exports = {
           light: 'hsl(48, 100%, 96%)',
           dark: 'hsl(48, 100%, 29%)',
           hover:'#ffdc7d',
-          active:'#ffd970'
+          active:'#ffd970',
+          '50':'#fff6de'
         },
         danger: {
           DEFAULT: 'hsl(348, 100%, 61%)',
           light: 'hsl(347, 90%, 96%)',
           dark: 'hsl(348, 86%, 43%)',
           hover: '#f03a5f',
-          active: '#ef2e55'
+          active: '#ef2e55',
+          '50': '#FEECF0'
         },
         info: {
           DEFAULT: 'hsl(204, 86%, 53%)',
