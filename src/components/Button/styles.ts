@@ -1,16 +1,16 @@
-import  classnames, { cursor, opacity, TArg } from 'tailwindcss-classnames';
+import  classnames, { cursor, opacity, TArg, typography } from 'tailwindcss-classnames';
 import {backgroundColor, borderColor, textColor} from '../../../tailwindcss-classnames';
 
 import {ButtonProps} from './Button'
 
-interface btnProps extends ButtonProps {
+// type btnStyleProps = Pick<ButtonProps, "type">
+// type btnStyleProps2 = ButtonProps['type']
+
+type myPick<T,K extends keyof T> = {
+  [P in K]: T[P]
 }
 
-type Stringify<T> = {
-  [K in keyof T]: T[K];
-};
-
-type btnStyleProps = Stringify<btnProps>
+type btnStyleProps = myPick<ButtonProps, "type" | "btnDisabled">
 
 export const baseButton = classnames( 
   cursor('cursor-pointer')
@@ -22,7 +22,7 @@ export const btnDisabled = classnames(
 );
 
 const tbui_btn_color = classnames(
-  borderColor('border-transparent'),
+  borderColor('border-transparent','hover:border-transparent'),
   textColor('text-white')
 )
 const tbui_btn_primary = classnames(
@@ -32,59 +32,59 @@ const tbui_btn_primary = classnames(
 )
 
 const tbui_btn_link = classnames(
-  backgroundColor('bg-link'),
+  backgroundColor('bg-link','hover:bg-link-hover'),
   textColor('text-white','hover:text-white'),
   tbui_btn_color
 )
 const tbui_btn_info = classnames(
-  backgroundColor('bg-info'),
+  backgroundColor('bg-info','hover:bg-info-hover'),
   textColor('text-white','hover:text-white'),
   tbui_btn_color
 )
 const tbui_btn_success = classnames(
-  backgroundColor('bg-success'),
+  backgroundColor('bg-success','hover:bg-success-hover'),
   textColor('text-white','hover:text-white'),
   tbui_btn_color
 )
 const tbui_btn_warning = classnames(
-  backgroundColor('bg-warning'),
-  textColor('text-white','hover:text-white'),
-  tbui_btn_color
+  backgroundColor('bg-warning','hover:bg-warning-hover'),
+  textColor('text-black','hover:text-black'),
+  borderColor('border-transparent','hover:border-transparent'),
 )
 const tbui_btn_Danger = classnames(
-  backgroundColor('bg-danger'),
+  backgroundColor('bg-danger','hover:bg-danger-hover'),
   textColor('text-white','hover:text-white'),
   tbui_btn_color
 )
 const tbui_btn_white = classnames(
-  backgroundColor('bg-white'),
+  backgroundColor('bg-white','hover:bg-white-hover'),
   textColor('text-black'),
-  tbui_btn_color
+  borderColor('border-transparent','hover:border-transparent'),
 )
 const tbui_btn_light = classnames(
-  backgroundColor('bg-light'),
-  textColor('text-black'),
-  tbui_btn_color
+  backgroundColor('bg-light','hover:bg-light-hover'),
+  textColor('text-black-ter'),
+  borderColor('border-transparent','hover:border-transparent'),
 )
 const tbui_btn_dark = classnames(
-  backgroundColor('bg-dark'),
-  textColor('text-black'),
-  tbui_btn_color
+  backgroundColor('bg-dark','hover:bg-dark-hover'),
+  textColor('text-white','hover:text-white'),
 )
 const tbui_btn_black = classnames(
-  backgroundColor('bg-black'),
-  textColor('text-white'),
-  tbui_btn_color
+  backgroundColor('bg-black','hover:bg-black-hover'),
+  textColor('text-white','hover:text-white'),
 )
 const tbui_btn_text = classnames(
   backgroundColor('bg-transparent','hover:bg-text-hover'),
   textColor('text-black'),
-  tbui_btn_color
+  borderColor('border-transparent','hover:border-transparent'),
+  typography('underline')
 )
 const tbui_btn_ghost = classnames(
   backgroundColor('bg-transparent'),
-  textColor('text-text-ghost'),
-  tbui_btn_color
+  textColor('text-text-ghost','hover:text-text-ghost'),
+  borderColor('border-transparent','hover:border-transparent'),
+  typography('hover:underline')
 )
 
 
