@@ -112,6 +112,9 @@ module.exports = {
       spacing: {
         '1.7': '0.4375rem',
       },
+      height: {
+        '15': '3.75rem',
+      }
     },
   },
   variants: {
