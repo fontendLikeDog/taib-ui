@@ -1,5 +1,5 @@
 import  classnames, { cursor, fontSize, opacity, TArg, typography } from 'tailwindcss-classnames';
-import {backgroundColor, borderColor, textColor} from '../../../tailwindcss-classnames';
+import {backgroundColor, borderColor, textColor, padding} from '../../../tailwindcss-classnames';
 
 import {ButtonProps} from './Button'
 
@@ -118,8 +118,20 @@ const tbui_btn_danger_light = classnames(
   borderColor('border-transparent','hover:border-transparent'),
   textColor('text-danger','hover:text-danger')
 )
+//btn sizes
+const tbui_btn_small = classnames(
+  padding('px-2.5','py-1.5'),
+  fontSize('text-xs')
+)
+const tbui_btn_normal = classnames(
+    padding('px-4','py-1.7'),
+    fontSize('text-sm')
+)
+const tbui_btn_medium = classnames(
+  padding('px-5','py-2'),
+  
 
-
+)
 
 export const disableButton = (disabled: boolean) =>
   classnames({
@@ -149,9 +161,9 @@ export const btnStyle = ({...args}:btnStyleProps) => {
     [tbui_btn_success_light]: type === 'success-light', 
     [tbui_btn_warning_light]: type === 'warning-light',
     [tbui_btn_danger_light]: type === 'danger-light',
-    // ['text-xs']: sizes === 'small',
-    // ['text-base']: sizes === 'normal',
-    // ['text-xl']: sizes === 'medium',
+    [tbui_btn_small]: sizes === 'small',
+    [tbui_btn_normal]: sizes === 'normal',
+    ['text-xl']: sizes === 'medium',
     // ['text-2xl']: sizes === 'large',
 
   } as unknown as TArg)
