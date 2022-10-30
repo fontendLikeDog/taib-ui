@@ -1,8 +1,8 @@
-import React from 'react';
-
+import React, { useRef, useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { Button } from './Button';
+import { Button } from './index';
+import IconHome from '../Icon/icons/iconHome/IconHome';
+import IconLoader from '../Icon/icons/iconLoader/IconLoader';
 
 export default {
   /* 👇 The title prop is optional.
@@ -13,14 +13,21 @@ export default {
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-//👇 We create a “template” of how args map to rendering
+//create a “template” of how args map to rendering
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
+export const Simple = Template.bind({});
+Simple.args = {
   buttonText: 'Button',
 };
-Default.storyName = 'Default';
+Simple.storyName = 'Pure Style';
+
+export const WithStyle = Template.bind({});
+WithStyle.args = {
+  buttonText: 'Button',
+  style: { backgroundColor: 'red', color: 'white' },
+}
+WithStyle.storyName = 'With Styles';
 
 export const Color = Template.bind({});
 Color.args = {
@@ -31,6 +38,60 @@ Color.storyName = 'Color';
 
 export const IconButton = Template.bind({});
 IconButton.args = {
-  buttonText: 'Icon',
-  type: 'link',
+  buttonText: 'Home',
+  type: 'success',
+  icon: <IconHome />
+}
+IconButton.storyName = 'With Icon';
+
+export const OnlyICon = Template.bind({});
+OnlyICon.args = {
+  onlyIcon:true,
+  type: 'primary',
+  icon: <IconHome />
+}
+OnlyICon.storyName = 'With Only Icon';
+
+export const LoaderBtn = Template.bind({});
+LoaderBtn.args = {
+  isLoader: true,
+  onlyIcon: true,
+  type: 'primary',
+  icon: <IconLoader />
+}
+LoaderBtn.storyName = 'With Only Loading';
+
+export const WithIconRight = Template.bind({});
+WithIconRight.args = {
+  type: 'primary',
+  isBtnRight: true,
+  buttonText: 'Button Text',
+}
+
+export const WithBlock = Template.bind({});
+WithBlock.args = {
+  block: true,
+  buttonText: 'Button Text',
+  type: "info",
+}
+
+export const WithCustomTag = Template.bind({});
+WithCustomTag.args = {
+  as: 'span',
+  buttonText: 'Button Text',
+  type: "dark"
+}
+
+export const WithRef = () => {
+  const buttonRef = useRef<any>(null)
+  const clickHandle = () => {
+    console.log(buttonRef.current)
+    buttonRef.current.clickFn(); //父组件调用子组件内部 addCount函数
+  }
+  return (
+    <>
+      <Button ref={buttonRef} isCount={true} type="link" />
+      <button onClick={clickHandle}>点击改变子组件的值</button>
+    </>
+  )
 }

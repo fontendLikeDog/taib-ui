@@ -1,4 +1,4 @@
-import  classnames, { cursor, fontSize, justifyContent, opacity, TArg, typography } from 'tailwindcss-classnames';
+import  classnames, { alignItems, borderRadius, borders, boxShadow, cursor, display, fontSize, justifyContent, opacity, TArg, typography, width } from 'tailwindcss-classnames';
 import {backgroundColor, borderColor, textColor, padding, height} from '../../../tailwindcss-classnames';
 
 import {ButtonProps} from './Button'
@@ -10,12 +10,15 @@ type myPick<T,K extends keyof T> = {
   [P in K]: T[P]
 }
 
-type btnStyleProps = myPick<ButtonProps, "type" | "btnDisabled" | "sizes">
+export type btnStyleProps = myPick<ButtonProps, "type" | "btnDisabled" | "sizes" | "isRadius" | "block">
 
-export const baseButton = classnames( 
+export const baseButton = classnames(
   cursor('cursor-pointer'),
   justifyContent('justify-center'),
-  typography('text-center','whitespace-nowrap')
+  alignItems('items-center'),
+  typography('text-center','whitespace-nowrap'),
+  borders('border'),
+  boxShadow('shadow-none')
 );
 
 export const btnDisabled = classnames(
@@ -23,6 +26,10 @@ export const btnDisabled = classnames(
     opacity('opacity-60'),
     cursor('cursor-not-allowed')
 );
+
+const tbui_btn_radius = classnames(
+  borderRadius('rounded'),
+)
 
 const tbui_btn_color = classnames(
   baseButton,
@@ -161,9 +168,16 @@ const tbui_btn_large = classnames(
   height('h-15')
 )
 
+const tbui_btn_block = classnames(
+  width('w-full'),
+  display('flex'),
+  baseButton
+)
+
 export const btnStyle = ({...args}:btnStyleProps) => {
-  const { type, sizes } = args;
+  const { type, sizes, isRadius,block } = args;
   return classnames({
+    [baseButton]: true,
     [tbui_btn_primary]: type === 'primary',
     [tbui_btn_link]: type === 'link',
     [btnDisabled]: args.btnDisabled,
@@ -187,6 +201,8 @@ export const btnStyle = ({...args}:btnStyleProps) => {
     [tbui_btn_normal]: sizes === 'normal',
     [tbui_btn_medium]: sizes === 'medium',
     [tbui_btn_large]: sizes === 'large',
+    [tbui_btn_radius]: isRadius,
+    [tbui_btn_block]: block,
 
   } as unknown as TArg)
 
