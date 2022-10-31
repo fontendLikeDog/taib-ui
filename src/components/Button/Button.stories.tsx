@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Button } from './index';
 import IconHome from '../Icon/icons/iconHome/IconHome';
@@ -25,7 +25,7 @@ Simple.storyName = 'Pure Style';
 export const WithStyle = Template.bind({});
 WithStyle.args = {
   buttonText: 'Button',
-  style: { backgroundColor: 'red', color: 'white' },
+  style: { backgroundColor: 'red', color: 'white',border:'none' },
 }
 WithStyle.storyName = 'With Styles';
 
@@ -90,8 +90,12 @@ export const WithRef = () => {
   }
   return (
     <>
-      <Button ref={buttonRef} isCount={true} type="link" />
-      <button onClick={clickHandle}>点击改变子组件的值</button>
+      
+      <div className='bg-primary' onClick={clickHandle}>点击绿布改变子组件的值
+        <div>
+          <Button ref={buttonRef} isCount={true} type="link" />
+        </div>
+      </div>
     </>
   )
 }
