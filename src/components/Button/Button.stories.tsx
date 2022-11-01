@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Button } from './index';
 import IconHome from '../Icon/icons/iconHome/IconHome';
 import IconLoader from '../Icon/icons/iconLoader/IconLoader';
+import { Button } from './index';
 
 export default {
   /* 👇 The title prop is optional.
