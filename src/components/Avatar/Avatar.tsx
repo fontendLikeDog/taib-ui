@@ -1,9 +1,11 @@
 import React, { FC } from "react";
 
-const Avatar:FC = () => {
+const Avatar:FC<any> = () => {
     return (
         <>avater</>
     )
 }
 
-export default Avatar
+export {
+    Avatar
+}
