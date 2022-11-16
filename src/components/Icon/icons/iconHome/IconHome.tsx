@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { IconBase } from '../..//IconBase';
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 
-const IconHome:FC<any> = () => {
+const IconHome = () => {
     return <IconBase icon={faHouse} />
 }
 
