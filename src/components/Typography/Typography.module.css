@@ -1,0 +1,96 @@
+/* marker fix */
+.taibui-typography li::marker {
+  display: none;
+  content: '';
+}
+
+.taibui-typography-container {
+  @apply prose prose-sm lg:prose-lg;
+}
+
+.taibui-typography {
+  @apply text-base;
+  @apply text-gray-400;
+}
+
+/* .taibui-typography--prose-sm {
+  @apply prose prose-sm;
+}
+
+.taibui-typography--prose-lg {
+  @apply prose prose-lg;
+}
+
+.taibui-typography--prose-xl {
+  @apply prose prose-xl;
+}
+
+.taibui-typography--prose-2xl {
+  @apply prose prose-2xl;
+} */
+
+.taibui-typography code {
+  padding: 0.2em 0.4em 0.1em;
+  background: hsla(0, 0%, 58.8%, 0.1);
+  border: 1px solid hsla(0, 0%, 39.2%, 0.2);
+  border-radius: 3px;
+}
+
+/*
+  dark mode styles
+
+  default styles are handled by tailwind config
+*/
+
+.dark .taibui-typography {
+  @apply text-gray-200;
+}
+
+.dark .taibui-typography h1 {
+  @apply text-white;
+}
+
+.dark .taibui-typography h2 {
+  @apply text-white;
+}
+
+.dark .taibui-typography h3 {
+  @apply text-white;
+}
+
+.dark .taibui-typography h4 {
+  @apply text-white;
+}
+
+.dark .taibui-typography h5 {
+  @apply text-white;
+}
+
+.dark .taibui-typography strong {
+  @apply text-white;
+}
+
+.dark .taibui-typography li::before {
+  @apply text-gray-300;
+}
+
+.dark .taibui-typography a {
+  @apply text-white;
+}
+
+.dark .taibui-typography blockquote {
+  @apply text-white;
+}
+
+.dark .taibui-typography code {
+  color: white;
+}
+
+.dark .taibui-typography figcaption {
+  @apply text-gray-600;
+}
+
+.dark .taibui-typography::selection {
+  /* @apply bg-brand-500; */
+  backgroundcolor: '#6f7bb635';
+}

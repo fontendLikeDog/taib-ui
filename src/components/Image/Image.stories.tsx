@@ -5,7 +5,7 @@ import {Image} from '.'
 import { ImageProps } from './Image';
 
 export default {
-    title: 'Dev/Image',
+    title: 'General/Image',
     component: Image,
 } as ComponentMeta<typeof Image>;
 

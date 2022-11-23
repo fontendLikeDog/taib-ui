@@ -1,10 +1,10 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Avatar } from ".";
+import  Avatar  from ".";
 import { IconHome } from '../Icon/icons/iconHome/Index';
 
 export default {
-    title: 'Dev/Avatar',
+    title: 'General/Avatar',
     component: Avatar,
   } as ComponentMeta<typeof Avatar>;
   
@@ -27,3 +27,13 @@ Icon.args = {
   type: 'Icon',
   AvaIcon: IconHome,
 }
+
+const TemplateGroup: ComponentStory<typeof Avatar.Group> = (args) => <Avatar.Group {...args} maxCount={3} >
+  <Avatar type="Img" src="https://picsum.photos/200" />
+  <Avatar type="Img" src="https://picsum.photos/300" />
+  <Avatar type="Img" src="https://picsum.photos/100" />
+  <Avatar type="Img" src="https://picsum.photos/200" />
+  <Avatar type="Img" src="https://picsum.photos/300" />
+  <Avatar type="Img" src="https://picsum.photos/100" />
+</Avatar.Group>;
+export const Group = TemplateGroup.bind({});
