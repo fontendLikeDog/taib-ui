@@ -6,7 +6,7 @@ import {ButtonProps} from './Button'
 // type btnStyleProps = Pick<ButtonProps, "type">
 // type btnStyleProps2 = ButtonProps['type']
 
-type myPick<T,K extends keyof T> = {
+export type myPick<T,K extends keyof T> = {
   [P in K]: T[P]
 }
 

@@ -9772,6 +9772,16 @@ export type TTypography =
   | TTextDecorationThickness
   | TTextUnderlineOffset
 
+export type TPluginTypography =
+  | 'prose'
+  | 'prose-sm'
+  | 'prose-lg'
+  | 'prose-xl'
+  | 'prose-2xl'
+
+export type TTailwindLabsPlugins =
+  | TPluginTypography
+
 
 export type TPseudoClassVariants =
   | 'motion-safe:'
@@ -10057,6 +10067,10 @@ export const textDecorationColor: TUtilityFunction<TTextDecorationColor> = class
 export const textDecorationThickness: TUtilityFunction<TTextDecorationThickness> = classnamesLib as any
 export const textUnderlineOffset: TUtilityFunction<TTextUnderlineOffset> = classnamesLib as any
 
+//////////// TailwindLabsPlugins Utility functions
+
+export const pluginTypography: TUtilityFunction<TPluginTypography> = classnamesLib as any
+
 //////////// Accessibility Utility functions
 
 export const accessibility: TUtilityFunction<TAccessibility> = classnamesLib as any
@@ -10135,6 +10149,11 @@ export const transforms: TUtilityFunction<TTransforms> = classnamesLib as any
 //////////// Typography Utility functions
 
 export const typography: TUtilityFunction<TTypography> = classnamesLib as any
+
+
+//////////// TailwindLabsPlugins Utility functions
+
+export const tailwindLabsPlugins: TUtilityFunction<TTailwindLabsPlugins> = classnamesLib as any
 
 export const TW = {
   screenReaders,
@@ -10303,7 +10322,8 @@ export const TW = {
   textIndent,
   textDecorationColor,
   textDecorationThickness,
-  textUnderlineOffset
+  textUnderlineOffset,
+  pluginTypography
 }
 
 export const CN = {
@@ -10322,7 +10342,8 @@ export const CN = {
   sizing,
   svg,
   transforms,
-  typography
+  typography,
+  tailwindLabsPlugins
 }
 
 export const mainCategoriesUtilityFunctions = CN;

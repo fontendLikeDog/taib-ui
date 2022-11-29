@@ -43,7 +43,7 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     as?: keyof JSX.IntrinsicElements;
 }
 
-interface CustomButtonProps extends React.HTMLAttributes<HTMLOrSVGElement> {}
+export interface CustomButtonProps extends React.HTMLAttributes<HTMLOrSVGElement> {}
 
 export interface refHandle {
   button: () => HTMLButtonElement | null;
